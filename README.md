@@ -1,5 +1,5 @@
 # Car_Rental
-
+*YOU ARE ADVISED TO HAVE ALL THESE FILES IN ONE FOLDER FOR THE RENTAL SYSTEM TO WORK*
 Car Rental Management System
 Overview
 This project is a simple Car Rental Management System implemented in C++. The system allows customers, employees, and managers to interact with the car rental service. Users can rent and return cars, while managers have additional functionalities such as adding/removing customers, employees, and cars, as well as checking the owner of a rented car.
