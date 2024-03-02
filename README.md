@@ -35,7 +35,7 @@ Customer
 Type return to return a rented car.
 Type rent to rent a car from the available collection.
 Employee
-Type return to process a returned car.
+Type return to process a produced car.
 Type rent to rent a car from the available collection.
 Manager
 Type AddCustomer to add a new customer to the system.
