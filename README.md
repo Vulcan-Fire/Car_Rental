@@ -53,8 +53,10 @@ The project defines three classes:
 User: Base class for Customer, Employee, and Manager classes containing common attributes and methods.
 Car: Represents a car with model, value, and condition attributes.
 Customer, Employee, Manager: Derived classes from the User class, each with specific functionalities.
+
 File Handling
-The system loads and saves data using file handling. Custs.txt, Employees.txt, Managers.txt, Cars.txt, CarOwner.txt, and Allcars.txt store user information, car details, and rental information.
+The system loads and saves data using file handling. Custs.txt( FORMAT:: NAME <newline> ID <newline> PASSWORD <newline> rent_limit <newline> rent_score <newline> rented_cars *comma separated* ), 
+Employees.txt( FORMAT:: NAME <newline> ID <newline> PASSWORD <newline> rent_limit <newline> rent_score <newline> rented_cars *comma separated* ), Managers.txt( FORMAT NAME <newline> ID <newline> PASSWORD), Cars.txt(Garage cars comma separated), CarOwner.txt(FORMAT:: CAR <newline> OWNER), and Allcars.txt(FORMAT:: CAR <newline> value <newline> condition(0% to 100%)) store user information, car details, and rental information.
 
 Data Persistence
 User and car information is stored persistently in text files. The system reads this data at startup and updates the files when users perform actions like renting, returning, or administrative tasks.
