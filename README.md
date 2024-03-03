@@ -31,6 +31,7 @@ Managers can perform administrative tasks, including adding/removing customers a
 Managers can check the owner of a rented car.
 Managers can add new cars to the rental fleet.
 Usage
+*ONCE YOU HAVE LOGGED SUCCESSFULLY TO ONE OF THE USERS, YOU CAN PERFORM THE RESPECTIVE METHODS ANY NUMBER OF TIMES. PROGRAM STOPS ONLY AT abort STATEMENT*
 Customer
 Type return to return a rented car.
 Type rent to rent a car from the available collection.
