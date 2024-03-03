@@ -83,22 +83,22 @@ class Customer : public User{
               for(int i=0;i<AllCars.size();i++) if(AllCars[i]->model==car_to_return) AllCars[i]->condition=condition;
    }
    void rent(unordered_set<string>& Cars,unordered_map<string,string>& CarOwner,vector<Car*> &Allcars){
-              string car_to_rent; int price_per_day=20;
+              string car_to_rent; float price_per_day=20;
               std::cout<<"______________________________________\nWhich car would you like to rent ?\n______________________________________\n";
 
               for(auto x:Cars) std::cout<<x<<" ";
 
               std::cout<<"\n";
               std::cin>>car_to_rent;
-              int value;
-              for(int i=0;i<Allcars.size();i++) if(Allcars[i]->model==car_to_rent) value=Allcars[i]->value;
+              float value;
+              for(int i=0;i<Allcars.size();i++) if(Allcars[i]->model==car_to_rent) {value=Allcars[i]->value; price_per_day=(Allcars[i]->value*price_per_day*(Allcars[i]->condition))/(float)100;}
 
               if(rent_lim>rented_cars.size()){
                 if(value<=rent_score){
                 int days; string flag;
                 std::cout<<"______________________________________\nFor how long you want the car?\n______________________________________\n";
                 std::cin>>days;
-                std::cout<<"Do you accept the deal for______________________________________\n"<<days*price_per_day<<"?\n";
+                std::cout<<"Do you accept the deal for "<<days*price_per_day<<"?\n";
                 std::cout<<"Type---->yes or Type---->no\n______________________________________\n";
                 std::cin>>flag;
                 if(flag=="yes"){
@@ -175,7 +175,7 @@ class Employee : public User{
               }
     }
     void rent(unordered_set<string>& Cars,unordered_map<string,string>&CarOwner,vector<Car*> &Allcars){
-              string car_to_rent; int price_per_day=20;
+              string car_to_rent; float price_per_day=20; float discount=15;
               std::cout<<"______________________________________\nWhich car would you like to rent ?\n______________________________________\n";
 
               for(auto x:Cars) std::cout<<x<<" ";
@@ -183,15 +183,15 @@ class Employee : public User{
               std::cout<<"\n";
               std::cin>>car_to_rent;
               int value;
-              for(int i=0;i<Allcars.size();i++) if(Allcars[i]->model==car_to_rent) value=Allcars[i]->value;
+              for(int i=0;i<Allcars.size();i++){value=Allcars[i]->value; price_per_day=(Allcars[i]->value*price_per_day*(Allcars[i]->condition))/(float)100;}
 
               if(rent_lim>rented_cars.size()){
                 if(value<=rent_score){
                 int days; string flag;
                 std::cout<<"______________________________________\nFor how long you want the car?\n______________________________________\n";
                 std::cin>>days;
-                std::cout<<"______________________________________\nDo you accept the deal for "<<days*price_per_day<<"?\n______________________________________\n";
-                std::cout<<"______________________________________\nType---->yes or Type---->no\n______________________________________\n";
+                std::cout<<"Do you accept the deal for "<<(days*(100-discount)*price_per_day)/(float)100<<"?\n";
+                std::cout<<"Type---->yes or Type---->no\n______________________________________\n";
                 std::cin>>flag;
                 if(flag=="yes"){
                 rented_cars.insert(car_to_rent);
